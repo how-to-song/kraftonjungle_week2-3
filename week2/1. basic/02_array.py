@@ -44,6 +44,7 @@ def rotate_matrix_90(matrix):
     n = len(matrix)
     
     # TODO: n x n 크기의 새로운 배열을 생성하세요 (0으로 초기화)
+    rotated
     pass
         
     # TODO: 원본 배열의 각 요소를 회전된 위치에 배치하세요
