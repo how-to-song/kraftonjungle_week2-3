@@ -41,7 +41,7 @@ def create_graph(vertices, edges, directed=False):
         그래프 딕셔너리
     """
     # TODO: 빈 그래프 초기화
-    graph = {i: [] for i in range(0, vertices)}
+    graph = {i: [] for i in range(0, vertices)} # grah = {int : list()} 왜 안되는지
     
     # TODO: 간선 추가
     ## 간선 추가 (u에서 v로)
