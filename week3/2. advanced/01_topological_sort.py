@@ -44,15 +44,13 @@ def topological_sort(vertices, edges):
     in_degrees = [0] * vertices
     
     # TODO: 그래프 구성 및 진입 차수 계산
-    for vertice in range(vertices):
-        for edge in range(len(edges)):
-            if vertice == edges[edge][0]:
-                graph[vertice].append(edges[edge][1])
-                in_degrees[edges[edge][1]] += 1
+    for a, b in edges:
+        graph[a].append(b)
+        in_degrees[b] += 1
     
     # TODO: 진입 차수가 0인 정점들을 큐에 추가
     queue = deque()
-    for i in in_degrees:
+    for i in range(len(in_degrees)):
         if in_degrees[i] == 0:
             queue.append(i)
     
@@ -69,6 +67,8 @@ def topological_sort(vertices, edges):
             in_degrees[j] -= 1
             if in_degrees[j] == 0:
                 queue.append(j)
+    
+    if len(result) != vertices: return[] # 사이클 감지
     
     return result
 
